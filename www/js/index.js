@@ -47,5 +47,20 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-function shake(){
-navigator.vibrate(1000);}
+
+
+
+
+function cameraCallback(){
+    var image = document.getElementById('myImage');
+    image.src = ImageData;
+}
+
+function onError(errorMessage){
+    console.log(errorMessage);
+}
+
+function takePicture(){
+    navigator.camera.getPicture(cameraCallback, onError);
+
+}
